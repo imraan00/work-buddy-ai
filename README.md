@@ -60,50 +60,8 @@ Supporting UX:
 - Input validation and length limits (Zod, server-side) on every AI request.
 - Neutral, inclusive tone enforced by prompt; harmful/deceptive requests are refused.
 
-## Technologies and tools used
-
-| Layer | Technology |
-| --- | --- |
-| Framework | TanStack Start v1 (React 19, file-based routing, SSR) |
-| Build | Vite 7 |
-| Language | TypeScript |
-| Styling | Tailwind CSS v4 with a semantic oklch design-token system (`src/styles.css`) |
-| UI | shadcn/ui (sidebar, card, select, tabs, textarea…), lucide-react icons, sonner toasts |
-| Data/state | TanStack Query, React state |
-| AI | Lovable AI (Vercel AI SDK v7 + `@ai-sdk/openai-compatible` via the Lovable AI Gateway), model `google/gemini-3.6-flash` |
-| Validation | Zod |
-| Markdown | react-markdown |
-| AI tools used during development | Lovable AI, ChatGPT (prompt drafting/refinement) |
-
-### Key files
-
-```
-src/lib/ai-gateway.server.ts   # Lovable AI Gateway provider (server-only)
-src/lib/ai.functions.ts        # Server functions + prompts for the 4 generative tools
-src/routes/api/chat.ts         # Streaming chat endpoint for the assistant
-src/routes/__root.tsx          # Dashboard shell: sidebar + header + head metadata
-src/routes/index.tsx           # Dashboard
-src/routes/email|meetings|planner|research|assistant.tsx
-src/components/AppSidebar.tsx  # Sidebar navigation
-src/components/AiDisclaimer.tsx, ResultPanel.tsx
-src/styles.css                 # Design system tokens + AI markdown styles
-```
-
-## Setup instructions
-
-Requirements: Node 20+ (or Bun) and a Lovable Cloud/AI-enabled project.
-
-```bash
-bun install        # or: npm install
-bun run dev        # starts the dev server on http://localhost:8080
-bun run build      # production build
-```
-
-Environment: the app calls the Lovable AI Gateway using the server-side
-`LOVABLE_API_KEY`, which Lovable provisions automatically — it is never exposed to the
-browser. If you run this outside Lovable, set `LOVABLE_API_KEY` in your server
-environment.
-
-## Team members
-
-- _Add your name(s) and roles here._
+## Technologies
+- Lovable AI
+- ChatGPT/OpenAI
+- Responsive web technologies
+- GitHub
